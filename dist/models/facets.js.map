@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/models/facets.js"],"names":["facets"],"mappings":";;;;;AAAA;AACA,IAAMA,SAAS,CAAC,CAAD,EAAG,CAAH,EAAK,CAAL,EAAO,CAAP,CAAf;kBACeA,M","file":"facets.js","sourcesContent":["// our example model is just an Array\nconst facets = [1,2,3,4];\nexport default facets;\n"]}
