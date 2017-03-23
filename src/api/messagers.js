@@ -1,8 +1,8 @@
 import resource from 'resource-router-middleware';
 import messagers from '../models/messagers';
+import client from '../lib/twilioClient';
 
-export default ({ config, db }) => resource({
-
+export default (config) => resource({
 	/** Property name to store preloaded entity on `request`. */
 	id : 'message',
 
@@ -17,7 +17,15 @@ export default ({ config, db }) => resource({
 
 	/** GET / - List all entities */
 	index({ params }, res) {
-		res.json(messagers);
+		client.availablePhoneNumbers('US').local
+  .list({
+    areaCode: '510',
+  })
+  .then((data) => {
+		console.log('aaaaaaaaaaa');
+    // const number = data[0];
+    res.json(data);
+  });
 	},
 
   /** POST / - Create a new entity */
@@ -29,6 +37,7 @@ export default ({ config, db }) => resource({
 
   /** GET /:id - Return a given entity */
   read({ messager }, res) {
+		console.log(config);
     console.log(messager);
     res.json(messager);
   },
