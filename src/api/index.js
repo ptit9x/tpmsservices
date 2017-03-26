@@ -1,7 +1,6 @@
-import { version } from '../../package.json';
-import { Router } from 'express';
-import availables from './availables';
-import messagers from './messagers';
+import { Router } from 'express'
+import availables from './availables'
+import messagers from './messagers'
 
 export default ({ config, db }) => {
 	let api = Router();
@@ -12,7 +11,9 @@ export default ({ config, db }) => {
 
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
-		res.json({ version });
+		res.json({
+			'get API messagers': '{domain}/api/messagers'
+		});
 	});
 
 	return api;

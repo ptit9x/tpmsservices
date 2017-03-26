@@ -1,0 +1,97 @@
+{
+	"variables": [],
+	"info": {
+		"name": "MorePhone",
+		"_postman_id": "1519bde2-f487-cdb2-5512-665f39047454",
+		"description": "- An application for mobile phone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calls",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Messagers",
+			"description": "",
+			"item": [
+				{
+					"name": "get all messagers",
+					"request": {
+						"url": "{{endpoint}}/api/messagers",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "token",
+								"value": "0ktpB1hU+FT1S1qVc8gqlK78clw=0ktpB1hU+FT1S1q",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n\t\"fullname\": \"abcd 1234\",\n\t\"email\": \"huynhdn@gmail.com\",\n\t\"telephone\": \"01636906993\",\n\t\"uid\": \"abcdsadc\",\n\t\"country\": \"Hà Nội\",\n\t\"language\": \"en\",\n\t\"appid\": 1,\n\t\"os\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get messager by phone number",
+					"request": {
+						"url": "{{endpoint}}/api/messagers/+17606215500",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "token",
+								"value": "0ktpB1hU+FT1S1qVc8gqlK78clw=0ktpB1hU+FT1S1q",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n\t\"fullname\": \"abcd 1234\",\n\t\"email\": \"huynhdn@gmail.com\",\n\t\"telephone\": \"01636906993\",\n\t\"uid\": \"abcdsadc\",\n\t\"country\": \"Hà Nội\",\n\t\"language\": \"en\",\n\t\"appid\": 1,\n\t\"os\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "send a sms",
+					"request": {
+						"url": "{{endpoint}}/api/messagers",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "token",
+								"value": "0ktpB1hU+FT1S1qVc8gqlK78clw=0ktpB1hU+FT1S1q",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"body\": \"Hello, truong suu nhi\",\n\t\"from\": \"+17606215500\",\n\t\"to\": \"+841674539633\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
