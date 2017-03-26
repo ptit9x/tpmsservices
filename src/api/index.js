@@ -1,3 +1,5 @@
+import 'babel-core/register'
+import 'babel-polyfill'
 import { Router } from 'express'
 import availables from './availables'
 import messagers from './messagers'
