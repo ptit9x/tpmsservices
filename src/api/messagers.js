@@ -62,6 +62,12 @@ export default (config) => resource({
 		const filterOpts = {
 			from: req.params.phone_number, // id is phone number
 		};
+		if (req.query.hasOwnProperty('to')) {
+			filterOpts.to = req.query.to;
+		}
+		if (req.query.hasOwnProperty('dateSent')) {
+			filterOpts.dateSent = new Date(req.query.dateSent);
+		}
 		const listMessagers = await Messager.getMessagerByPhone(filterOpts);
 		res.json(listMessagers);
 	},

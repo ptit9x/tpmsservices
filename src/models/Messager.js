@@ -69,11 +69,6 @@ class Messager {
   * get messager by phone number
   */
   getMessagerByPhone(filterOpts) {
-  // const filterOpts = {
-  //   to: 'to_number',
-  //   from: 'from_number',
-  //   dateSent: new Date(2017, 0, 1),
-  // };
   return client.messages.list(filterOpts)
     .then((data) => {
       let listMessagers = [];

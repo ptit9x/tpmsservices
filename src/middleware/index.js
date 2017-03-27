@@ -4,7 +4,11 @@ export default (config) => {
 	let routes = Router();
 
 	// add middleware here, check token and validate common json
-	console.log('middleware');
+	routes.use(function(req, res, next) {
+    // validate
+    console.log(req.headers.token, 'Something is happening.');
+    next();
+	});
 
 	return routes;
 }
