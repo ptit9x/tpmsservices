@@ -1,6 +1,5 @@
-import resource from 'resource-router-middleware'
-import client from '../lib/twilioClient'
-import PhoneNumber from '../models/PhoneNumber'
+import resource from 'resource-router-middleware';
+import PhoneNumber from '../models/PhoneNumber';
 
 export default (config) => resource({
 
