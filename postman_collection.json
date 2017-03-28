@@ -18,6 +18,19 @@
 			"item": [
 				{
 					"name": "get all messagers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var responseJson = JSON.parse(responseBody);",
+									"",
+									"tests[\"Status code is 201 Created\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "{{endpoint}}/api/messagers",
 						"method": "GET",
@@ -35,7 +48,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n\t\"fullname\": \"abcd 1234\",\n\t\"email\": \"huynhdn@gmail.com\",\n\t\"telephone\": \"01636906993\",\n\t\"uid\": \"abcdsadc\",\n\t\"country\": \"Hà Nội\",\n\t\"language\": \"en\",\n\t\"appid\": 1,\n\t\"os\": 1\n}"
+							"raw": "{\n  \"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n  \"fullname\": \"abcd 1234\",\n  \"email\": \"huynhdn@gmail.com\",\n  \"telephone\": \"01636906993\",\n  \"uid\": \"abcdsadc\",\n  \"country\": \"Hà Nội\",\n  \"language\": \"en\",\n  \"appid\": 1,\n  \"os\": 1\n}"
 						},
 						"description": ""
 					},
@@ -43,6 +56,19 @@
 				},
 				{
 					"name": "get messager by phone number",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var responseJson = JSON.parse(responseBody);",
+									"",
+									"tests[\"Status code is 201 Created\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "{{endpoint}}/api/messagers/+17606215500",
 						"method": "GET",
@@ -60,7 +86,45 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n\t\"fullname\": \"abcd 1234\",\n\t\"email\": \"huynhdn@gmail.com\",\n\t\"telephone\": \"01636906993\",\n\t\"uid\": \"abcdsadc\",\n\t\"country\": \"Hà Nội\",\n\t\"language\": \"en\",\n\t\"appid\": 1,\n\t\"os\": 1\n}"
+							"raw": "{\n  \"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n  \"fullname\": \"abcd 1234\",\n  \"email\": \"huynhdn@gmail.com\",\n  \"telephone\": \"01636906993\",\n  \"uid\": \"abcdsadc\",\n  \"country\": \"Hà Nội\",\n  \"language\": \"en\",\n  \"appid\": 1,\n  \"os\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get messager by filters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var responseJson = JSON.parse(responseBody);",
+									"",
+									"tests[\"Status code is 201 Created\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{endpoint}}/api/messagers/+17606215500?to+841674539633&dateSent=2017-03-26",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "token",
+								"value": "0ktpB1hU+FT1S1qVc8gqlK78clw=0ktpB1hU+FT1S1q",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"0ktpB1hU+FT1S1qVc8gqlK78clw=\",\n  \"fullname\": \"abcd 1234\",\n  \"email\": \"huynhdn@gmail.com\",\n  \"telephone\": \"01636906993\",\n  \"uid\": \"abcdsadc\",\n  \"country\": \"Hà Nội\",\n  \"language\": \"en\",\n  \"appid\": 1,\n  \"os\": 1\n}"
 						},
 						"description": ""
 					},
@@ -68,6 +132,19 @@
 				},
 				{
 					"name": "send a sms",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var responseJson = JSON.parse(responseBody);",
+									"",
+									"tests[\"Status code is 201 Created\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "{{endpoint}}/api/messagers",
 						"method": "POST",
@@ -85,7 +162,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"body\": \"Hello, truong suu nhi\",\n\t\"from\": \"+17606215500\",\n\t\"to\": \"+841674539633\"\n}"
+							"raw": "{\n  \"body\": \"Hello, truong suu nhi\",\n  \"from\": \"+17606215500\",\n  \"to\": \"+841674539633\"\n}"
 						},
 						"description": ""
 					},

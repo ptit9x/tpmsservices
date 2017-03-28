@@ -31,6 +31,7 @@
   "author": "HuynhDN <ngochuynh1991@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-eslint": "^7.2.1",
     "babel-polyfill": "^6.23.0",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
