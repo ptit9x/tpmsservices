@@ -4,6 +4,7 @@ import { Router } from 'express'
 import availables from './availables'
 import messagers from './messagers'
 import calls from './calls'
+import conversation from './conversation'
 
 export default ({ config, db }) => {
 	let api = Router();
@@ -12,6 +13,7 @@ export default ({ config, db }) => {
 	api.use('/availables', availables({ config, db }));
 	api.use('/messagers', messagers({ config, db }));
 	api.use('/calls', calls(config));
+	api.use('/conversation', conversation(config));
 
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
